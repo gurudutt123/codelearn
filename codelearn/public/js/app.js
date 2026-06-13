@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentModule = 'python_m1';
 
     // API Base
-    const API_URL = 'http://localhost:3000/api';
+    const API_URL = '/api';
 
     // Handle Form Submission
     authForm.addEventListener('submit', (e) => {
