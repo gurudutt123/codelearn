@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLearn | Premium Programming Platform</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Highlight.js for Code Snippets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/css/style.css" 
+</head>
+<body>
+
+    <!-- Auth Modal Overlay -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <h2 id="auth-title">Welcome to CodeLearn</h2>
+            <p id="auth-error" class="error-text"></p>
+            <form id="auth-form">
+                <div class="input-group">
+                    <i data-lucide="user"></i>
+                    <input type="text" id="username" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i data-lucide="mail"></i>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <button type="submit" class="btn-primary" id="auth-submit">Start Learning</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- App Layout -->
+    <div id="app-layout" class="hidden">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i data-lucide="code-2" class="accent-icon"></i>
+                <span>CodeLearn</span>
+            </div>
+            
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input type="text" id="search-input" placeholder="Search notes...">
+            </div>
+
+            <nav class="course-nav" id="sidebar-nav">
+                <!-- Dynamically populated -->
+                <div class="nav-section">
+                    <h3>Python Masterclass</h3>
+                    <ul id="nav-python">
+                        <li data-target="python_m1" class="active"><i data-lucide="book-open"></i> M1: Introduction</li>
+                        <li data-target="python_m2"><i data-lucide="book-open"></i> M2: Basics</li>
+                        <li data-target="python_m3"><i data-lucide="book-open"></i> M3: Control Flow</li>
+                        <li data-target="python_m4"><i data-lucide="book-open"></i> M4: Strings</li>
+                        <li data-target="python_m5"><i data-lucide="book-open"></i> M5: Lists & Tuples</li>
+                    </ul>
+                </div>
+                <!-- Other subjects will be appended here -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i data-lucide="user-circle"></i>
+                    <span id="current-username">Student</span>
+                </div>
+                <button id="logout-btn" class="btn-secondary"><i data-lucide="log-out"></i> Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <header class="topbar glass-card">
+                <div class="mobile-menu-btn" id="mobile-menu-btn"><i data-lucide="menu"></i></div>
+                <div class="breadcrumb">
+                    <span id="course-title">Python Masterclass</span> > <span id="module-title" class="accent-text">M1: Introduction</span>
+                </div>
+                <div class="topbar-actions">
+                    <button class="btn-icon" id="bookmark-btn" title="Bookmark"><i data-lucide="bookmark"></i></button>
+                    <button class="btn-primary" id="mark-complete-btn"><i data-lucide="check-circle"></i> Mark Completed</button>
+                </div>
+            </header>
+
+            <!-- Progress Bar -->
+            <div class="reading-progress-container">
+                <div class="reading-progress-bar" id="reading-progress"></div>
+            </div>
+
+            <!-- Content Container -->
+            <div class="content-wrapper scroll-container" id="content-area">
+                <!-- Markdown content gets rendered here -->
+                <div class="loader">Loading content...</div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="glass-card site-footer">
+                <p>Created by Guru Mishra</p>
+                <div class="contact-info">
+                    <a href="mailto:gurumishra1701@gmail.com"><i data-lucide="mail"></i> gurumishra1701@gmail.com</a> | 
+                    <a href="tel:+919152066229"><i data-lucide="phone"></i> +91 9152066229</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
